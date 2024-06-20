@@ -62,7 +62,7 @@ a {
 
 .navbar {
   background-color: #282c34;
-  padding: 7px;
+  /* padding: 7px; */
   color: white;
 }
 
@@ -86,6 +86,7 @@ a {
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 10px;
+  /* min-width: 400px; */
   max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -206,4 +207,109 @@ button:hover {
 
 .dark-mode .btn-light:hover {
   background-color: #cc8400;
+}
+
+/* src/App.css */
+/* Existing styles */
+
+.converter-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 20px; /* Add some spacing above the converter */
+}
+
+/* Optional: Add more styles as needed to match your design */
+.clear-button {
+  padding: 10px 20px;
+  /* background-color: #dc3545; */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.clear-button:hover {
+  color: whitesmoke;
+}
+
+
+/* src/App.css */
+/* Existing styles */
+
+/* src/App.css */
+/* Existing styles */
+
+.navbar-contact {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.contact-name {
+  color: white;
+  margin-right: 15px;
+}
+
+.contact-link {
+  color: white;
+  margin-left: 10px;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: #ddd;
+}
+
+/* src/App.css */
+/* Existing styles */
+
+/* Styles for the footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ddd;
+}
+
+footer h5 {
+  margin-bottom: 20px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer .form-label {
+  color: white;
+}
+
+footer .btn-light {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border: none;
+}
+
+footer .btn-light:hover {
+  background-color: #e2e6ea;
+}
+
+footer .contact-info {
+  display: flex;
+  align-items: center;
+}
+
+footer .contact-info svg {
+  margin-right: 10px;
 }

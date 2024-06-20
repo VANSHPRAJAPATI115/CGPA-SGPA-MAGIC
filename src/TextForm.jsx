@@ -7,12 +7,10 @@ function TextForm() {
   const [creditEarned, setCreditEarned] = useState('');
   const [pointScored, setPointScored] = useState('');
   const [cgpa, setCgpa] = useState(null);
-  const [showCgpaResult, setShowCgpaResult] = useState(false);
 
   const [semesterCredits, setSemesterCredits] = useState('');
   const [semesterPoints, setSemesterPoints] = useState('');
   const [sgpa, setSgpa] = useState(null);
-  const [showSgpaResult, setShowSgpaResult] = useState(false);
 
   const handleCreditEarnedChange = (e) => {
     setCreditEarned(e.target.value);
@@ -37,7 +35,6 @@ function TextForm() {
     if (!isNaN(credit) && !isNaN(points) && credit !== 0) {
       const result = points / credit;
       setCgpa(result.toFixed(2));
-      setShowCgpaResult(true);
     } else {
       alert('Please enter valid numbers for both fields and ensure credit earned is not zero.');
     }
@@ -50,15 +47,12 @@ function TextForm() {
     if (!isNaN(semesterCredit) && !isNaN(semesterPoint) && semesterCredit !== 0) {
       const result = semesterPoint / semesterCredit;
       setSgpa(result.toFixed(2));
-      setShowSgpaResult(true);
     } else {
       alert('Please enter valid numbers for both fields and ensure semester credits are not zero.');
     }
   };
 
-  const hideResults = () => {
-    setShowCgpaResult(false);
-    setShowSgpaResult(false);
+  const clearResults = () => {
     setCgpa(null);
     setSgpa(null);
     setCreditEarned('');
@@ -87,12 +81,11 @@ function TextForm() {
             onChange={handleCreditEarnedChange}
           />
         </div>
-        <button onClick={showCgpaResult ? hideResults : calculateCGPA}>
-          {showCgpaResult ? 'Hide Result' : 'Calculate CGPA'}
-        </button>
-        {showCgpaResult && cgpa !== null && (
+        <button onClick={calculateCGPA}>Calculate CGPA</button>
+        {cgpa !== null && (
           <div className="result">
             <h3>Your CGPA: {cgpa}</h3>
+            <button onClick={clearResults} className="clear-button">Clear</button>
           </div>
         )}
       </div>
@@ -115,12 +108,11 @@ function TextForm() {
             onChange={handleSemesterCreditsChange}
           />
         </div>
-        <button onClick={showSgpaResult ? hideResults : calculateSGPA}>
-          {showSgpaResult ? 'Hide Result' : 'Calculate SGPA'}
-        </button>
-        {showSgpaResult && sgpa !== null && (
+        <button onClick={calculateSGPA}>Calculate SGPA</button>
+        {sgpa !== null && (
           <div className="result">
             <h3>Your SGPA: {sgpa}</h3>
+            <button onClick={clearResults} className="clear-button">Clear</button>
           </div>
         )}
       </div>
