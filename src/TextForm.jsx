@@ -76,7 +76,7 @@ function TextForm() {
   return (
     <div className="converter-wrapper">
       <div className="converter">
-        <h2><i>CALCULATE YOUR CGPA</i></h2>
+        <h2><i>CALCULATE CGPA</i></h2>
         <div className="input-group">
           <label>Total Points Scored (Present + Previous) Semester:</label>
           <input
@@ -96,14 +96,14 @@ function TextForm() {
         <button className="calculate-button" onClick={calculateCGPA}>Calculate CGPA</button>
         {cgpa !== null && (
           <div className="result">
-            <h3>Your CGPA: {cgpa}</h3>
+            <h3>CGPA: {cgpa}</h3>
             <button onClick={clearResults} className="clear-button">Clear</button>
           </div>
         )}
       </div>
 
       <div className="converter">
-        <h2><i>CALCULATE YOUR SGPA</i></h2>
+        <h2><i>CALCULATE SGPA</i></h2>
         <div className="input-group">
           <label>Point Scored in Present Semester:</label>
           <input
@@ -123,7 +123,7 @@ function TextForm() {
         <button className="calculate-button" onClick={calculateSGPA}>Calculate SGPA</button>
         {sgpa !== null && (
           <div className="result">
-            <h3>Your SGPA: {sgpa}</h3>
+            <h3>SGPA: {sgpa}</h3>
             <button onClick={clearResults} className="clear-button">Clear</button>
           </div>
         )}
