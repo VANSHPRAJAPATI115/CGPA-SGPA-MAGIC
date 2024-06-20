@@ -31,19 +31,18 @@ a {
   text-decoration: none;
 }
 
-.navbar .navbar-brand,
+/* .navbar .navbar-brand,
 .navbar .nav-link {
-  color: white !important; /* Override default link color */
-}
+  color: white; /* Override default link color */
+*/
 
 .navbar .nav-link:hover {
   color: lightgray !important; /* Optional: color on hover */
 }
 
-/* Additional styles can be added as needed */
-/* Footer custom styling */
+
 .footer-link {
-  color: #ffc107; /* Change link color */
+  color: #ffc107; 
 }
 
 .footer-link:hover {
@@ -296,13 +295,13 @@ footer .form-label {
 }
 
 footer .btn-light {
-  background-color: #f8f9fa;
-  color: #343a40;
+  
+  color: white;
   border: none;
 }
 
 footer .btn-light:hover {
-  background-color: #e2e6ea;
+  background-color: #0056b3;
 }
 
 footer .contact-info {
@@ -313,3 +312,36 @@ footer .contact-info {
 footer .contact-info svg {
   margin-right: 10px;
 }
+.calculate-button {
+  background-color: #007bff; /* Choose your desired button color */
+  color: #fff; /* Text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculate-button:hover {
+  background-color: #0056b3; /* Darker shade of the main color for hover effect */
+}
+
+.calculate-button {
+  background-color: #007bff; /* Default button color */
+  color: #fff; /* Text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculate-button:hover {
+  background-color: #0056b3; /* Darker shade of the main color for hover effect */
+}
+
+
+
+
+
+

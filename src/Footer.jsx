@@ -105,7 +105,7 @@ const Footer = () => {
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-light">Submit</button>
+                <button type="submit" className="btn btn-light" >Submit</button>
               </form>
             </div>
           </div>

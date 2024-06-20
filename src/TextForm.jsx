@@ -29,6 +29,12 @@ function TextForm() {
   };
 
   const calculateCGPA = () => {
+    // Check if input fields are empty
+    if (creditEarned.trim() === '' || pointScored.trim() === '') {
+      alert('Please enter valid numbers for both fields.');
+      return;
+    }
+
     const credit = parseFloat(creditEarned);
     const points = parseFloat(pointScored);
 
@@ -41,6 +47,12 @@ function TextForm() {
   };
 
   const calculateSGPA = () => {
+    // Check if input fields are empty
+    if (semesterCredits.trim() === '' || semesterPoints.trim() === '') {
+      alert('Please enter valid numbers for both fields.');
+      return;
+    }
+
     const semesterCredit = parseFloat(semesterCredits);
     const semesterPoint = parseFloat(semesterPoints);
 
@@ -81,7 +93,7 @@ function TextForm() {
             onChange={handleCreditEarnedChange}
           />
         </div>
-        <button onClick={calculateCGPA}>Calculate CGPA</button>
+        <button className="calculate-button" onClick={calculateCGPA}>Calculate CGPA</button>
         {cgpa !== null && (
           <div className="result">
             <h3>Your CGPA: {cgpa}</h3>
@@ -108,7 +120,7 @@ function TextForm() {
             onChange={handleSemesterCreditsChange}
           />
         </div>
-        <button onClick={calculateSGPA}>Calculate SGPA</button>
+        <button className="calculate-button" onClick={calculateSGPA}>Calculate SGPA</button>
         {sgpa !== null && (
           <div className="result">
             <h3>Your SGPA: {sgpa}</h3>
