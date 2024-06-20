@@ -26,7 +26,7 @@ const SCPAtoCGPAConverter = () => {
 
   return (
     <div className="converter">
-      <h2><i>SGPA → PERCENTAGE</i></h2>
+      <h2><i>CGPA → PERCENTAGE</i></h2>
       <div className="input-group">
         <label htmlFor="scpa">Enter SGPA:</label>
         <input
