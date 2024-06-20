@@ -26,9 +26,9 @@ const SCPAtoCGPAConverter = () => {
 
   return (
     <div className="converter">
-      <h2><i>SCPA → CGPA</i></h2>
+      <h2><i>SGPA → PERCENTAGE</i></h2>
       <div className="input-group">
-        <label htmlFor="scpa">Enter Sgpa:</label>
+        <label htmlFor="scpa">Enter SGPA:</label>
         <input
           type="number"
           id="scpa"
@@ -40,7 +40,7 @@ const SCPAtoCGPAConverter = () => {
       <button onClick={convertToCgpa}>Convert</button>
       {cgpa !== null && (
         <div className="result">
-          <h3>CGPA: {cgpa}</h3>
+          <h3>Percentage: {cgpa}%</h3>
           <button onClick={clearResult} className="clear-button">Clear</button>
         </div>
       )}
