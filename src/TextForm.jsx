@@ -129,7 +129,7 @@ function TextForm() {
             <input
               type="text"
               value={pointScored}
-              onChange={handlePointScoredChange}
+              onChange={handlePointScoredChange} placeholder='ex:- 170 + 200.50'
             />
           </div>
           <div className="input-group">
@@ -137,7 +137,7 @@ function TextForm() {
             <input
               type="text"
               value={creditEarned}
-              onChange={handleCreditEarnedChange}
+              onChange={handleCreditEarnedChange}  placeholder='ex:- 17.5 + 20.50'
             />
           </div>
           <button className="calculate-button" onClick={calculateCGPA}>Calculate CGPA</button>
@@ -156,7 +156,7 @@ function TextForm() {
             <input
               type="text"
               value={semesterPoints}
-              onChange={handleSemesterPointsChange}
+              onChange={handleSemesterPointsChange} placeholder='ex:- 170.5'
             />
           </div>
           <div className="input-group">
@@ -164,7 +164,7 @@ function TextForm() {
             <input
               type="text"
               value={semesterCredits}
-              onChange={handleSemesterCreditsChange}
+              onChange={handleSemesterCreditsChange}placeholder='ex:- 17.5'
             />
           </div>
           <button className="calculate-button" onClick={calculateSGPA}>Calculate SGPA</button>
@@ -185,7 +185,7 @@ function TextForm() {
             <input
               type="text"
               value={presentCreditEarned}
-              onChange={handlePresentCreditEarnedChange}
+              onChange={handlePresentCreditEarnedChange}placeholder='ex:- 20.00'
             />
           </div>
           <div className="input-group">
@@ -193,7 +193,7 @@ function TextForm() {
             <input
               type="text"
               value={presentSgpa}
-              onChange={handlePresentSgpaChange}
+              onChange={handlePresentSgpaChange}placeholder='ex:- 10.00'
             />
           </div>
           <button className="calculate-button" onClick={calculatePresentPointScored}>Calculate Point</button>

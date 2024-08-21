@@ -17,7 +17,7 @@ const ColorChanger = () => {
 
   return (
     <div style={{ textAlign: 'center', paddingTop: '5px'}}>
-      <button onClick={toggleDarkMode} style={{ padding: '10px 20px', fontSize: '16px', marginBottom: '10px', borderRadius: '7%' }}>
+      <button onClick={toggleDarkMode} style={{ padding: '10px 20px', fontSize: '16px', marginBottom: '10px',marginRight: '10px', borderRadius: '7%' }}>
         <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} style={{ marginRight: '8px' }} />
         {isDarkMode ? 'Light Mode' : 'Dark Mode'}
       </button>

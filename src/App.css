@@ -9,7 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.5s, color 0.5s;
-  background-color: #fff;
+  background-color: #f3eaea;
   color: #000;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .navbar {
-  padding: 1px 15px 0px 15px;
+  padding: 1px 15px 20upx 15px;
 }
 
 .navbar-brand {
@@ -31,10 +31,7 @@ a {
   text-decoration: none;
 }
 
-/* .navbar .navbar-brand,
-.navbar .nav-link {
-  color: white; /* Override default link color */
-*/
+
 
 .navbar .nav-link:hover {
   color: lightgray !important; /* Optional: color on hover */
@@ -234,17 +231,13 @@ button:hover {
 }
 
 
-/* src/App.css */
-/* Existing styles */
 
-/* src/App.css */
-/* Existing styles */
 
 .navbar-contact {
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .contact-name {
@@ -344,7 +337,7 @@ footer .contact-info svg {
 .navbar {
   width: 100%;
   overflow: hidden;
-  background: rgb(243, 243, 245);
+  background: #f3eaea;
   /* font-weight: 500; */
   padding: 10px 0;
   text-align: center;
@@ -371,20 +364,10 @@ footer .contact-info svg {
   }
 }
 
-/* src/App.css */
-/* Existing styles */
+
 
 /* Media query for mobile devices */
-@media (max-width: 768px) {
-  .contact-link { /* Assuming GitHub, LinkedIn, and email have the class 'contact-link' */
-    display: none; /* Hide the elements on mobile */
-  }
-}
-/* src/App.css */
-/* Existing styles */
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .contact-link { /* Assuming GitHub, LinkedIn, and email have the class 'contact-link' */
     display: none; /* Hide the elements on mobile */
   }
