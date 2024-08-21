@@ -340,8 +340,54 @@ footer .contact-info svg {
   background-color: #0056b3; /* Darker shade of the main color for hover effect */
 }
 
+/* Navbar with scrolling text */
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  background: rgb(243, 243, 245);
+  /* font-weight: 500; */
+  padding: 10px 0;
+  text-align: center;
+}
 
 
 
+/* Scrolling text */
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: large;
+  color: #00FF00;
+  animation: scroll-text 20s linear infinite;
+}
+
+/* Keyframes for scrolling text */
+@keyframes scroll-text {
+  from {
+    transform: translateX(60%);
+  }
+  to {
+    transform: translateX(-60%);
+  }
+}
+
+/* src/App.css */
+/* Existing styles */
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .contact-link { /* Assuming GitHub, LinkedIn, and email have the class 'contact-link' */
+    display: none; /* Hide the elements on mobile */
+  }
+}
+/* src/App.css */
+/* Existing styles */
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .contact-link { /* Assuming GitHub, LinkedIn, and email have the class 'contact-link' */
+    display: none; /* Hide the elements on mobile */
+  }
+}
 
 

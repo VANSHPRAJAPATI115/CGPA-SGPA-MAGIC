@@ -9,7 +9,7 @@ export default function Navber() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-lg-dark bg-dark">
-        <a className="navbar-brand" href="#"><i>CGPA CALCULATER</i></a>
+        <a className="navbar-brand" href="#"><i>&nbsp;&nbsp;CGPA CALCULATER</i></a>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
