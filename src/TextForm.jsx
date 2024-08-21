@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbtack } from '@fortawesome/free-solid-svg-icons';
 import './App.css'; // Import your CSS file
 
+
 function TextForm() {
   const [creditEarned, setCreditEarned] = useState('');
   const [pointScored, setPointScored] = useState('');
