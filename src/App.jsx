@@ -3,7 +3,7 @@
 import Navber from './Navber';
 import TextForm from './TextForm';
 import Footer from './Footer';
-import SCPAtoCGPAConverter from './SCPAtoCGPAConverter'; // Import the new component
+import SCPAtoCGPAConverter from './SCPAtoCGPAConverter';
 import './App.css';
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
       <div className="container">
         <TextForm />
         <div className="converter-wrapper">
-          <SCPAtoCGPAConverter /> {/* Add the new component here */}
+          <SCPAtoCGPAConverter />
         </div>
       </div>
-      <Footer />
+      <Footer/>   
     </>
   );
 }
