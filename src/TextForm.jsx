@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbtack } from '@fortawesome/free-solid-svg-icons';
 import './App.css'; // Import your CSS file
+import sampleImage from './assets/sample-image.jpg'; 
+
 
 
 function TextForm() {
@@ -114,11 +116,17 @@ function TextForm() {
 
   return (
     <div>
+    
       <div className="navbar">
          <div className="scrolling-text"><i> If you want to know the CGPA of the semester you are in, you need to add the total marks from the first semester to the current semester. Enter those marks in the text box.</i> 
         </div>
       </div>
+      <div className="image-wrapper">
+          <img src={sampleImage} alt="Sample" className="main-image" />
+        </div>
 
+
+        
       <div className="converter-wrapper">
         
 
@@ -167,6 +175,10 @@ function TextForm() {
               onChange={handleSemesterCreditsChange}placeholder='ex:- 17.5'
             />
           </div>
+
+
+
+          
           <button className="calculate-button" onClick={calculateSGPA}>Calculate SGPA</button>
           {sgpa !== null && (
             <div className="result">

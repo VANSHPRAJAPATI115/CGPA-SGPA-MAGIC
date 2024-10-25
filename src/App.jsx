@@ -11,12 +11,16 @@ function App() {
     <>
       <Navber />
       <div className="container">
+        {/* Display the imported image */}
+        
+        
         <TextForm />
+        
         <div className="converter-wrapper">
           <SCPAtoCGPAConverter />
         </div>
       </div>
-      <Footer/>   
+      <Footer />   
     </>
   );
 }

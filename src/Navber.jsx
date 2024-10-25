@@ -8,9 +8,13 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 export default function Navber() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-lg-dark bg-dark">
-        <a className="navbar-brand" href="#"><i>&nbsp;CGPA CALCULATER</i></a>
-        <div className="collapse navbar-collapse" id="navbarNav">
+   
+
+      <nav className="navbar navbar-expand-lg navbar-lg-dark bg-dark px-5">
+      <a className="navbar-brand" href="#">
+      <img src="src\assets\logo.png" alt="Logo" style={{ height: '30px', width: 'auto' }} />
+    </a>       
+     <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link" href="#">Home</a>

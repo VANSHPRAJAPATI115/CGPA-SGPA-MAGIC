@@ -9,7 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.5s, color 0.5s;
-  background-color: #f3eaea;
+  background-color: white;
   color: #000;
 }
 
@@ -19,6 +19,7 @@ body {
 }
 
 .navbar {
+  
   padding: 1px 15px 20upx 15px;
 }
 
@@ -58,8 +59,8 @@ a {
 
 .navbar {
   background-color: #282c34;
-  /* padding: 7px; */
   color: white;
+  
 }
 
 .navbar h1 {
@@ -68,6 +69,8 @@ a {
 
 .container {
   padding: 20px;
+   
+  
 }
 
 .converter-wrapper {
@@ -139,7 +142,7 @@ button:hover {
   max-width: 800px;
   margin: 20px auto;
   padding: 10px;
-  background-color: #fffbe6;
+  background-color: white;
   border: 1px solid #ffd700;
   border-radius: 5px;
   text-align: left;
@@ -337,7 +340,7 @@ footer .contact-info svg {
 .navbar {
   width: 100%;
   overflow: hidden;
-  background: #f3eaea;
+  background: white;
   /* font-weight: 500; */
   padding: 10px 0;
   text-align: center;
@@ -347,10 +350,11 @@ footer .contact-info svg {
 
 /* Scrolling text */
 .scrolling-text {
+  
   display: inline-block;
   white-space: nowrap;
   font-size: large;
-  color: #00FF00;
+  color: #ffa500;
   animation: scroll-text 20s linear infinite;
 }
 
@@ -372,4 +376,20 @@ footer .contact-info svg {
     display: none; /* Hide the elements on mobile */
   }
 }
+
+/* src/App.css */
+.image-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #333; /* Adjust color and thickness as needed */
+  padding: 5px; /* Optional: adds space between image and border */
+}
+
+
 
