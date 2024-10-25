@@ -12,7 +12,7 @@ export default function Navber() {
 
       <nav className="navbar navbar-expand-lg navbar-lg-dark bg-dark px-5">
       <a className="navbar-brand" href="#">
-      <img src="src\assets\logo.png" alt="Vp" style={{ height: '30px', width: 'auto' }} />
+      <img src="/logo.png" alt="Vp" style={{ height: '32px', width: 'auto' }} />
     </a>       
      <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
