@@ -17,9 +17,22 @@ const ColorChanger = () => {
 
   return (
     <div style={{ textAlign: 'center', paddingTop: '5px'}}>
-      <button onClick={toggleDarkMode} style={{ padding: '10px 20px', fontSize: '16px', marginBottom: '10px',marginRight: '10px', borderRadius: '7%' }}>
-        <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} style={{ marginRight: '8px' }} />
-        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+      <button 
+        onClick={toggleDarkMode} 
+        style={{
+          padding: '10px', 
+          fontSize: '20px', 
+          // borderRadius: '50%', 
+          background: 'none', 
+          border: 'none', 
+          cursor: 'pointer'
+        }}
+        aria-label={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+      >
+        <FontAwesomeIcon 
+          icon={isDarkMode ? faSun : faMoon} 
+          style={{ color: isDarkMode ? '#ffad16' : '#b1b0b0' }} 
+        />
       </button>
     </div>
   );

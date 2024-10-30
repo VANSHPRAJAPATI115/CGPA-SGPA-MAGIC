@@ -1,44 +1,81 @@
-// import React from 'react'
-import './App.css'
-import ColorChanger from './ColorChanger'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+// src/Navber.js
+import './App.css';
+import './Navber.css';
+import ColorChanger from './ColorChanger';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from 'react';
 
 export default function Navber() {
-  return (
-    <>
-   
+  const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
-      <nav className="navbar navbar-expand-lg navbar-lg-dark bg-dark px-5">
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
       <a className="navbar-brand" href="#">
-      <img src="/logo.png" alt="Vp" style={{ height: '32px', width: 'auto' }} />
-    </a>       
-     <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Home</a>
-            </li>
-            {/* <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
-            </li> */}
-          </ul>
+        <img src="/logo.png" alt="Vp Logo" className="navbar-logo" />
+      </a>
+      
+      <div className="navbar-icons">
+        {/* Navbar toggler icon */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          aria-controls="navbarNav"
+          aria-expanded={!isNavCollapsed ? true : false}
+          aria-label="Toggle navigation"
+          onClick={handleNavCollapse}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Dark/Light mode icon outside the collapsible menu */}
+        <div className="color-changer">
+          <ColorChanger />
         </div>
-        <div className="navbar-contact">
-          <a className="contact-link" href="vanshprajapati115@gmail.com">
+      </div>
+
+      <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
+        <ul className="navbar-nav me-auto">
+          <li className="nav-item">
+            <a className="nav-link" href="#">Home</a>
+          </li>
+        </ul>
+
+        <div className="navbar-contact d-flex align-items-center">
+          <a className="contact-link mx-2" href="mailto:vanshprajapati115@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
-          <a className="contact-link" href="https://www.linkedin.com/in/vp115" target="_blank" rel="noopener noreferrer">
+          <a className="contact-link mx-2" href="https://www.linkedin.com/in/vp115" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a className="contact-link" href="https://github.com/VANSHPRAJAPATI115" target="_blank" rel="noopener noreferrer">
+          <a className="contact-link mx-2" href="https://github.com/VANSHPRAJAPATI115" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </div>
-        <div className="color-changer-container">
-          <ColorChanger />
+        
+        <div className="auth-container ms-3 d-flex align-items-center">
+          {isAuthenticated ? (
+            <>
+              <span className="username me-3">Hello, {user.name}</span>
+              <button
+                className="btn btn-outline-light btn-sm ms-3 mx-2"
+                onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <button className="btn btn-outline-light btn-sm" onClick={loginWithRedirect}>
+               Log In
+            </button>
+          )}
         </div>
-      </nav>
-    </>
-  )
+      </div>
+    </nav>
+  );
 }
