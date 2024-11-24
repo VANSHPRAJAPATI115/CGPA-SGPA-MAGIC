@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { gsap } from 'gsap';
 import CustomAlert from './CustomAlert'; // Ensure this import is correct
 import './App.css'; // Import custom CSS for footer styling
 
@@ -14,6 +15,27 @@ const Footer = () => {
   });
   const [alertMessage, setAlertMessage] = useState(null);
 
+  const footerRef = useRef();
+  const containerRef = useRef();
+
+  // GSAP animation on initial load
+  useEffect(() => {
+    gsap.fromTo(
+      footerRef.current,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' }
+    );
+  }, []);
+
+  // Click animation
+  const handleFooterClick = () => {
+    gsap.fromTo(
+      footerRef.current,
+      { scale: 1 },
+      { scale: 1.05, duration: 0.2, ease: 'power1.out', yoyo: true, repeat: 1 }
+    );
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -22,27 +44,21 @@ const Footer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.send('service_imojp2i', 'template_cb19p5k', formData, 'PUHlyKsNFEnoQvLkj')
+    emailjs
+      .send('service_imojp2i', 'template_cb19p5k', formData, 'PUHlyKsNFEnoQvLkj')
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        // Show success alert
         setAlertMessage('Feedback submitted successfully!');
-        // Clear the form after successful submission
         setFormData({
           name: '',
           email: '',
           feedback: ''
         });
-        // Automatically hide alert after 5 seconds
         setTimeout(() => {
           setAlertMessage(null);
         }, 5000);
       })
       .catch((error) => {
-        console.error('FAILED...', error);
-        // Show error alert
         setAlertMessage('Failed to submit feedback. Please try again.');
-        // Automatically hide alert after 5 seconds
         setTimeout(() => {
           setAlertMessage(null);
         }, 5000);
@@ -55,29 +71,54 @@ const Footer = () => {
 
   return (
     <>
-    
-        
       {alertMessage && <CustomAlert message={alertMessage} onClose={closeAlert} />}
-      <footer className="bg-dark text-light py-4">
-        
-        <div className="container">
-          
+      <footer
+        ref={footerRef}
+        onClick={handleFooterClick}
+        className="footer bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 text-light py-8"
+        style={{
+          color: '#fff',
+          cursor: 'pointer',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div ref={containerRef} className="container">
           <div className="row">
             <div className="col-md-6">
-              <h5>Contact Information</h5>
-              <p><strong>Name:</strong> Vansh Prajapati</p>
-              <p><strong></strong> <a href="mailto:Vanshprajapati115@gmail.com" className="text-light"><FontAwesomeIcon icon={faEnvelope} /> Vanshprajapati115@gmail.com</a></p>
-              <p><strong></strong> <a href="https://www.linkedin.com/in/vp115" className="text-light" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /> Vansh Prajapati</a></p>
-              <p><strong></strong> <a href="https://github.com/VANSHPRAJAPATI115" className="text-light" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /> Vansh Prajapati</a></p>
+              <h5 className="text-2xl font-bold mb-4">Contact Information</h5>
+              <p className="mb-2">
+                <strong>Name:</strong> Vansh Prajapati
+              </p>
+              <p className="mb-2">
+                <a href="mailto:Vanshprajapati115@gmail.com" className="hover:underline text-light">
+                  <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                  Vanshprajapati115@gmail.com
+                </a>
+              </p>
+              <p className="mb-2">
+                <a href="https://www.linkedin.com/in/vp115" className="hover:underline text-light">
+                  <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
+                  Vansh Prajapati
+                </a>
+              </p>
+              <p className="mb-2">
+                <a href="https://github.com/VANSHPRAJAPATI115" className="hover:underline text-light">
+                  <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                  Vansh Prajapati
+                </a>
+              </p>
             </div>
             <div className="col-md-6">
-              <h5>Send Feedback</h5>
-              <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="name" className="form-label text-light">Name</label>
+              <h5 className="text-2xl font-bold mb-4">Send Feedback</h5>
+              <form onSubmit={handleSubmit} className="form">
+                <div className="mb-4">
+                  <label htmlFor="name" className="form-label text-light">
+                    Name
+                  </label>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control rounded-md"
                     id="name"
                     name="name"
                     value={formData.name}
@@ -85,11 +126,13 @@ const Footer = () => {
                     required
                   />
                 </div>
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label text-light">Email</label>
+                <div className="mb-4">
+                  <label htmlFor="email" className="form-label text-light">
+                    Email
+                  </label>
                   <input
                     type="email"
-                    className="form-control"
+                    className="form-control rounded-md"
                     id="email"
                     name="email"
                     value={formData.email}
@@ -97,10 +140,12 @@ const Footer = () => {
                     required
                   />
                 </div>
-                <div className="mb-3">
-                  <label htmlFor="feedback" className="form-label text-light">Feedback</label>
+                <div className="mb-4">
+                  <label htmlFor="feedback" className="form-label text-light">
+                    Feedback
+                  </label>
                   <textarea
-                    className="form-control"
+                    className="form-control rounded-md"
                     id="feedback"
                     name="feedback"
                     rows="3"
@@ -109,42 +154,22 @@ const Footer = () => {
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-light" >Submit</button>
+                <button
+                  type="submit"
+                  className="btn btn-light text-dark hover:bg-indigo-600 hover:text-white transition duration-300"
+                >
+                  Submit
+                </button>
               </form>
             </div>
           </div>
-          
         </div>
-
-        
-        <div className="w-full h-px bg-white-400 my-4"></div>
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
-          <div className="py-8">
-            <p className="text-center text-base text-body-color dark:text-white">
-            Copyright © 2024{" "}
-              <a
-                href="https://cgpa-scpa-magic.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary"
-              >
-                CGPA SGPA MAGIC.
-              </a>{" "}
-              All Rights Reserved.{" "}
-              {/* <a
-                href="https://nextjstemplates.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary"
-              >
-                Next.js Templates
-              </a> */}
-            </p>
-          </div>
-        
+        <div className="text-center mt-6">
+          <p className="text-sm font-light">
+            © 2024 <span className="font-semibold">Vansh Prajapati</span>. All rights reserved.
+          </p>
+        </div>
       </footer>
-
-      
     </>
   );
 };

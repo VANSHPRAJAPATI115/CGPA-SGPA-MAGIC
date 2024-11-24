@@ -87,7 +87,7 @@ a {
   border-radius: 10px;
   /* min-width: 400px; */
   max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgb(249, 30, 30);
 }
 
 .converter h2 {
@@ -340,7 +340,7 @@ footer .contact-info svg {
 .navbar {
   width: 100%;
   overflow: hidden;
-  background: white;
+  background: #FFFFFF;
   /* font-weight: 500; */
   padding: 10px 0;
   text-align: center;
@@ -348,14 +348,19 @@ footer .contact-info svg {
 
 
 
-/* Scrolling text */
 .scrolling-text {
-  
   display: inline-block;
   white-space: nowrap;
   font-size: large;
   color: #ffa500;
-  animation: scroll-text 20s linear infinite;
+  animation: scroll-text 20s linear infinite, color-change 5s linear infinite;
+}
+
+@keyframes color-change {
+  0% { color: #ffa500; }
+  30% { color: #ff4500; }
+  60% { color: #ff6347; }
+  100% { color: #ffa500; }
 }
 
 /* Keyframes for scrolling text */
@@ -390,6 +395,19 @@ footer .contact-info svg {
   border: 3px solid #333; /* Adjust color and thickness as needed */
   padding: 5px; /* Optional: adds space between image and border */
 }
+
+/* App.css */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #007bff;
+  transform-origin: 0%;
+  z-index: 100;
+}
+
 
 
 

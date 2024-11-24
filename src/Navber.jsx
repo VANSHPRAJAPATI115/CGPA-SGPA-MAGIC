@@ -20,7 +20,7 @@ export default function Navber() {
     if (!isAuthenticated) {
       const alertInterval = setInterval(() => {
         setShowAlert(true); // Show the custom alert
-      }, 15000); // Show alert every 1 minute
+      }, 10000); // Show alert every 1 minute
 
       return () => clearInterval(alertInterval); // Clear interval on unmount
     }
